@@ -1,8 +1,8 @@
 cask "cycliq-cycliqplus" do
-  version "2.53"
-  sha256 "76424d10b3e31640267c27a563c630431ad43e20e47b1baf5aebdd9dcb107f43"
+  version "2.61"
+  sha256 "0a01a44079e2b984524d453f5e987b0cdf48c648ca682a5f4c106a53172f1641"
 
-  url "https://cycliq.com/files/software/CycliqPlus-#{version}.dmg"
+  url "https://cycliq.com/files/software/downloads/CycliqPlus-#{version}.dmg"
   name "CycliqPlus"
   desc "Footage and bike camera settings editor"
   homepage "https://cycliq.com/"

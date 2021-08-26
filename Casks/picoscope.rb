@@ -1,8 +1,8 @@
 cask "picoscope" do
-  version "6.14.36.5676"
-  sha256 "4c843d2b8b12bb614da12122341a0e02d42042d180c45160b6e2b6f29af504fb"
+  version "6.14.48-4r5944"
+  sha256 "176c8017125b0f6252d2b3483e15c3f159f5d9a9706e8c460bb60565a0e81ef9"
 
-  url "https://www.picotech.com/download/software/sr/PicoScope-#{version}.pkg"
+  url "https://www.picotech.com/download/software/beta/PicoScope-#{version}.pkg"
   name "PicoScope"
   desc "Test and measurement oscilloscope software for PicoScope oscilloscops"
   homepage "https://www.picotech.com/"
@@ -10,10 +10,10 @@ cask "picoscope" do
   livecheck do
     url "https://www.picotech.com/downloads/_lightbox/"
     strategy :page_match
-    regex(%r{href=.*?/PicoScope-(\d+(?:\.\d+)*)\.pkg}i)
+    regex(%r{href=.*?/PicoScope-(\d+(?:.\d+)*)\.pkg}i)
   end
 
   pkg "PicoScope-#{version}.pkg"
 
-  uninstall pkgutil: "com.picotech.picoscope6"
+  uninstall pkgutil: "com.picotech.picoscope#{version.major}"
 end

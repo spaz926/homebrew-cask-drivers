@@ -1,11 +1,16 @@
 cask "1kc-razer" do
-  version "0.4.1"
-  sha256 "011897b134fd2870a9ea4a2d6c43cde4c8f83e5e589cbc5657ffce2c5a9cd0c6"
+  version "0.4.5"
+  sha256 "5e5136c12b1138b5719a1234192c1fa7bcc85b9822bd2a9832ace73173590286"
 
   url "https://github.com/1kc/razer-macos/releases/download/v#{version}/Razer.macOS-#{version}.dmg"
   name "Razer macOS"
   desc "Open source color effects manager for Razer devices"
   homepage "https://github.com/1kc/razer-macos"
+
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
 
   app "Razer macOS.app"
 

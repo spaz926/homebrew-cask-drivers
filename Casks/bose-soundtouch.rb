@@ -1,12 +1,21 @@
 cask "bose-soundtouch" do
-  version "26.0.0-3251-ff6a93d,st3_2020_a3b99494"
-  sha256 "be74aeaa1e73bd6b07d92ceb5fcff5b58c4023eb7ccdb034fea842080554aa4e"
+  version "27.0.0-3377-1037583,mr4_c4ab85bd"
+  sha256 "b84ee3bbe3350b14873daa003703b745ab24fc0af97615c74a20c6b3e5d87a57"
 
   url "https://downloads.bose.com/ced/soundtouch/#{version.after_comma}/SoundTouch-app-installer-#{version.before_comma}.dmg"
-  appcast "https://downloads.bose.com/ced/soundtouch/#{version.after_comma}/index.xml"
   name "Bose Soundtouch Controller App"
   desc "Control Bose SoundTouch systems from your computer"
   homepage "https://downloads.bose.com/ced/soundtouch/soundtouch_controller_app/index.html"
+
+  livecheck do
+    url :homepage
+    regex(%r{href=.*?/ced/soundtouch/([^/]+)/SoundTouch-app-installer[._-](\d+(?:\.\d+)+(?:-[a-z\d]+)+)\.dmg}i)
+    strategy :page_match do |page, regex|
+      page.scan(regex).map do |match|
+        "#{match[1]},#{match[0]}"
+      end
+    end
+  end
 
   auto_updates true
 
@@ -23,7 +32,10 @@ cask "bose-soundtouch" do
   },
             signal:    ["TERM", "com.Bose.SoundTouch"],
             quit:      "io.qt.SoundTouchHelper",
-            launchctl: "com.Bose.SoundTouch"
+            launchctl: [
+              "com.Bose.SoundTouch",
+              "application.com.Bose.SoundTouch",
+            ]
 
   zap trash: [
     "~/Library/Application Support/SoundTouch",

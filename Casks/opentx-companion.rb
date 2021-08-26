@@ -1,6 +1,6 @@
 cask "opentx-companion" do
-  version "2.3.11"
-  sha256 "67e087f19bf74ef07a1fd28d0f68b8a7bbf00fce44ff76bb65dfbd0a0b10af7d"
+  version "2.3.14"
+  sha256 "34e6c54dc8d91bb2d5a4c6da1f732372f173f02cd63401b8a601e88850c4a27d"
 
   url "https://downloads.open-tx.org/#{version.major_minor}/release/companion/macosx/opentx-companion-#{version}.dmg"
   name "OpenTX Companion"
@@ -9,8 +9,7 @@ cask "opentx-companion" do
 
   livecheck do
     url "https://www.open-tx.org/downloads"
-    strategy :page_match
-    regex(/opentx\s(\d(?:\.\d+)*)/i)
+    regex(%r{href=.*?/opentx[._-]v?(\d+(?:\.\d+)+)}i)
   end
 
   app "OpenTX Companion #{version.major_minor}.app"

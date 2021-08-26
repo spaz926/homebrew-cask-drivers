@@ -1,6 +1,6 @@
 cask "blue-sherpa" do
-  version "20210121"
-  sha256 "42632547bdf69fb979b31cc08e601fd5805b638259e2e9e916b865f0893ed8ba"
+  version "20210729"
+  sha256 "63c307483f104a1109a172fb18e655be6385be46a47440e1f9fb36701cfab1ec"
 
   url "https://software.bluemic.com/blue/BlueSherpa-#{version}.pkg"
   name "Blue Sherpa"

@@ -1,14 +1,14 @@
 cask "obinskit" do
-  version "1.1.5"
-  sha256 "5204f9d567fbddc2778c5e7af65f0fedc1661734bca111689d8af130e134ba81"
+  version "1.1.8"
+  sha256 "e45c3662475871d28b1aaa95ecda9ff44b8cdb387cee168c9f8200775c1b3fc0"
 
-  url "http://releases.obins.net/occ/darwin/x64/ObinsKit_#{version}_x64.dmg"
+  url "https://releases.obins.net/occ/darwin/x64/ObinsKit_#{version}_x64.dmg"
   name "ObinsKit"
   desc "Software for Anne Pro and Anne Pro 2"
   homepage "http://en.obins.net/obinskit"
 
   livecheck do
-    url "http://releases.obins.net/occ/darwin/x64/latest-mac.yml"
+    url "https://releases.obins.net/occ/darwin/x64/latest-mac.yml"
     strategy :electron_builder
   end
 
